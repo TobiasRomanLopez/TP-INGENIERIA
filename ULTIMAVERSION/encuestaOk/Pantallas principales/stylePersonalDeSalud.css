@@ -1,0 +1,310 @@
+.titulo{
+    background-color: rgb(222, 209, 194);
+    text-align: center;    
+}
+
+.mjeInicial {
+    text-align: center;
+
+}
+/*Encuesta Mel*/
+
+.txtPreg{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.txtFinal{
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.especialidades{
+
+    font-size: 18px;
+}
+#especialidades {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ebf1ed;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.botonConfirmar {
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: rgb(222, 209, 194);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+}
+
+#calificacionSala{
+    padding: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+#contenedorEncuesta {
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(176, 190, 197);
+    border: 2px solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+#estrella1, #estrella2, #estrella3, #estrella4, #estrella5 {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    margin: 15px;
+}
+
+.pregunta {
+    display: none;
+}
+
+.pregunta.activa {
+    display: block;
+}
+
+#calificacionAspectos{
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 20px;
+    cursor:pointer;
+}
+
+#botonSi, #botonNo, #botonOtro{
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 20px;
+    cursor:pointer;
+}
+
+
+#boton1, #boton2, #boton3, #boton4, #boton5, #boton6, #boton7, #boton8, #boton9, #boton10{
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 5px;
+    border-style:outset ;
+    cursor:pointer;
+}
+
+
+/*Fin encuesta Mel*/
+
+#logo {
+    top: 40px;
+    left: 50px;
+    width: 200px;
+}
+
+.barra_navegacion {
+    background-color: rgba(223, 223, 223, 0.5); /* Color gris claro con opacidad */
+    height: 50px; /* Altura de la barra de navegación */
+    width: 100%; /* Ancho completo */
+    position: relative; /* Mantiene el flujo del documento */
+    z-index: 1; /* Asegúrate de que la barra de navegación esté sobre otros elementos */
+}
+
+.menu {
+    position: relative; /* Mantiene el flujo del documento */
+    list-style-type: none; /* Quita los puntos de la lista */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el padding */
+    display: flex; /* Organiza los elementos en fila */
+    justify-content: space-around; /* Espacia los elementos uniformemente */
+    align-items: center; /* Centra verticalmente los elementos del menú */
+    height: 100%; /* Asegura que el menú tenga la misma altura que la barra de navegación */
+}
+
+.menu li {
+    margin: 0 40px; /* Espaciado horizontal entre los elementos del menú */
+}
+
+.menu a {
+    font-family: 'Montserrat';
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: black; /* Color del texto de los enlaces */
+    padding: 8px 18px; /* Espaciado interno para los enlaces */
+    transition: background-color 0.3s; /* Añade una transición suave */
+}
+
+.menu a:hover {
+    background-color: rgba(19, 18, 18, 0.2); /* Cambia el fondo al pasar el mouse */
+    border-radius: 4px; /* Bordes redondeados en el hover */
+}
+
+
+/* css micaaaa*/
+
+/* logo chiquito */
+
+/* Centrado y estilo de la sección principal */
+#inicio {
+    font-family: 'Montserrat';
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    text-align: center;
+    animation: fadeInMove 2s ease-out;
+}
+
+
+.imagen-mefratomi {
+    width: 400px; 
+    max-width: 100%;
+    margin-bottom: 20px;
+    animation: fadeInMove 2s ease-out;
+}
+
+
+#inicio h2, #inicio p {
+    animation: fadeInMove 2s ease-out;
+}
+
+/* Animacion de movimiento y opacidad */
+@keyframes fadeInMove {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* contenedor del mapa */
+#map {
+    width: 75%;
+    height: 500px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+}
+
+/* buscador */
+.buscador {
+    text-align: center;
+    margin: 20px;
+}
+
+.buscador input, .buscador button {
+    font-family: 'Montserrat';
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+#reporte-content {
+    font-family: 'Montserrat';
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+ /* Ocultar inicialmente el contenido de resultados y de no respondidas */
+ #resultados-content, #no-respondidas-content {
+    font-family: 'Montserrat';
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.encuestas-content {
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto en el contenedor */
+}
+
+.btn {
+    font-family: 'Montserrat';
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    text-align: center; /* Asegura que el texto dentro del botón esté centrado */
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.container {
+    font-family: 'Montserrat';
+    text-align: center; /* Centra el texto e imágenes dentro del contenedor */
+    margin: 20px auto; /* Espaciado */
+    margin-top: 20px; /* Agrega un margen superior para separar del menú */
+}
+
+.btn-responder {
+    font-family: 'Montserrat';
+    margin-top: 50px; /* Espaciado superior para el botón */
+    margin-left: -190px; /* Ajusta este valor para mover el botón hacia la izquierda */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+.btn-responder:hover {
+    background-color: #45a049; /* Color al pasar el mouse */
+}
+/* Estilo para la imagen de estrellas */
+.estrellas-btnEncuesta {
+    margin-top: 20px; /* Espaciado superior */
+    max-width: 100%; /* La imagen no sobrepasará el ancho del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    margin-bottom: 30px; /* Espaciado inferior */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed; /* Fija el footer */
+    bottom: 0; /* Lo coloca en la parte inferior */
+    left: 0; /* Alinea al lado izquierdo */
+    right: 0; /* Alinea al lado derecho */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links, .footer-social {
+    margin: 10px 0;
+}
+
+.footer-links a, .footer-social a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 10px;
+}

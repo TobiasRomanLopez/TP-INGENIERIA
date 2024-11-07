@@ -1,0 +1,195 @@
+#logo 
+{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 200px;
+    height: auto;
+}
+
+#estrellas
+{
+    width: 18%;
+    height: auto;
+    position: absolute;
+    top: 45%;
+    right: 70%;
+    left: 40%;
+}
+
+#botones
+{
+    gap: 10px; /* Espacio entre botones */
+    display: flex;
+    position: absolute;
+    top: 65%;
+    right: 50%;
+    left: 37%;
+    flex-direction: column;
+}
+
+#botones a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#botones a:hover {
+    text-decoration: underline;
+}
+#botones button 
+{
+    width: 500px; /* Ajusta el ancho de los botones al contenedor */
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.barra_busqueda 
+{
+    max-width: 800px;
+    margin: 0 auto;
+    position: absolute;
+    top: 100px;
+    right: 90px;    
+}
+
+.campo_busqueda 
+{
+    width: 450px;
+    padding: 8px 12px 8px 32px; /* Espacio a la izquierda para el ícono */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-image: url('images/icono_de_busqueda.png'); /* URL de la imagen de lupa */
+    background-size: 18px; /* Tamaño de la lupa */
+    background-position: 10px center; /* Posición de la lupa dentro del campo */
+    background-repeat: no-repeat;
+    background-color: white; /* Color de fondo del campo */
+}
+
+.barra_navegacion 
+{
+    background-color: rgba(223, 223, 223, 0.5); /* Color gris claro con opacidad (casi transparente) */
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    top: 210px;
+}
+
+.menu
+{
+    left: 13%;
+    top: 16px;
+    position: absolute;
+    list-style-type: none; /* Quita los puntos de la lista */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el padding */
+    display: flex; /* Organiza los elementos en fila */
+    justify-content: space-around; /* Espacia los elementos uniformemente */
+}
+
+.menu li 
+{
+    margin: 0 80px; /* Espaciado horizontal entre los elementos del menú */
+}
+
+.menu a 
+{
+    font-family: 'Montserrat';
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: black; /* Color del texto de los enlaces */
+    padding: 8px 18px; /* Espaciado interno para los enlaces */
+    transition: background-color 0.3s; /* Añade una transición suave */
+}
+
+.menu a:hover 
+{
+    background-color: rgba(255, 255, 255, 0.2); /* Cambia el fondo al pasar el mouse */
+    border-radius: 4px; /* Bordes redondeados en el hover */
+}
+
+h1
+{
+    position: absolute;
+    top: 33%;
+    right: 22%;
+    font-weight: 350;
+    font-family: "Raleway", sans-serif;
+    font-size: 40px;
+}
+
+h4
+{
+    width: 100%;
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    position: absolute;
+    top: 55%;
+    right: 20%;
+    left: 29%;
+}
+
+h5
+{
+    width: 100%;
+    font-size: 14px;
+    font-family: "Raleway", sans-serif;
+    position: absolute;
+    top: 85%;
+    right: 20%;
+    left: 32%;
+}
+
+#logo_info
+{
+    width: 2%;
+    position: absolute;
+    top: 86%;
+    right: 50%;
+    left: 29%;
+}
+
+#centro_medico
+{
+    top: 50%;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed; /* Fija el footer */
+    bottom: 0; /* Lo coloca en la parte inferior */
+    left: 0; /* Alinea al lado izquierdo */
+    right: 0; /* Alinea al lado derecho */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links, .footer-social {
+    margin: 10px 0;
+}
+
+.footer-links a, .footer-social a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal de Salud</title>
+    
+    <!-- Link al CSS global y al CSS de Leaflet -->
+    <link rel="stylesheet" href="/ULTIMAVERSION/encuestaOk/Pantallas principales/stylePersonalDeSalud.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="Logo_centrosDeSalud.png" alt="Logo centro de salud" id="logo">
+    </header>
+    <nav class="barra_navegacion">
+        <ul class="menu">
+            <li><a href="principalPersonalDeSalud.html" onclick="mostrarInicio()">INICIO</a></li>
+            <li><a href="#encuestas" onclick="mostrarEncuestas()">ENCUESTAS</a></li>
+            <li><a href="#reporte" onclick="mostrarReporte()">VER REPORTE</a></li>
+            <li><a href="#consultarZona" onclick="mostrarMapa()">CONSULTAR ZONA</a></li>
+        </ul>
+    </nav>
+
+    <div class="buscador" style="display: none;">
+        <input type="text" id="busqueda" placeholder="Buscar centro de salud">
+        <button onclick="buscarCentro()">Buscar</button>
+    </div>
+    <div id="map" style="height: 400px; display: none;"></div>
+
+    <div id="inicio" class="inicio-content">
+        <h2>Bienvenido al Portal del Centro de Salud MEFRATOMI</h2>
+        <img src="mefratomi.jpg" alt="Imagen centro de salud" class="imagen-mefratomi">
+        <p>En esta plataforma, podrás consultar reportes de encuestas, localizar zonas de atención y acceder a datos relevantes para mejorar la atención al paciente.</p>
+    </div>
+
+    <div id="reporte-content" style="display: none;">
+        <h2>Reporte de Encuestas</h2>
+        <p>Aquí puedes ver un resumen de las encuestas completadas por los pacientes y las estadísticas generales.</p>
+    </div>
+
+    <div id="encuestas-content" class="encuestas-content" style="display: none;">
+        <h2>Encuestas</h2>
+        <p>Seleccione una opción:</p>
+        <button class="btn" onclick="mostrarResultadosDeEncuestas()">Ver Resultados de Encuestas</button>
+        <button class="btn" onclick="mostrarEncuestasNoRespondidas()">Ver Pacientes que No Respondieron</button>
+    
+        <div id="resultados-content" style="display: none;">
+            <h3>Resultados de Encuestas Respondidas</h3>
+            <p>Aquí se mostrará el resumen de las encuestas respondidas.</p>
+        </div>
+    
+        <div id="no-respondidas-content" style="display: none;">
+            <h3>Pacientes que No Respondieron</h3>
+            <p>Listado de los pacientes que aún no respondieron a la encuesta.</p>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#privacy">Política de Privacidad</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+            <p>&copy;Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        let map;
+        let markers = [];
+
+        // Datos de los centros de salud
+        const centrosSalud = [
+            { nombre: "Centro de Salud 1", lat: -34.6037, lon: -58.3816, calificacion: 4 },
+            { nombre: "Centro de Salud 2", lat: -34.6225, lon: -58.3688, calificacion: 3 },
+            { nombre: "Centro de Salud 3", lat: -34.5902, lon: -58.3820, calificacion: 5 },
+            { nombre: "Centro de Salud 4", lat: -34.6061, lon: -58.3772, calificacion: 2 },
+        ];
+
+        function inicializarMapa() {
+            if (!map) { // Inicializa el mapa solo si no esta ya creado
+                map = L.map('map').setView([-34.6037, -58.3816], 12);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+            }
+            cargarCentrosEnMapa();
+        }
+
+        function cargarCentrosEnMapa() {
+            // Agrega centros solo si no existen
+            centrosSalud.forEach(centro => {
+                const marker = L.marker([centro.lat, centro.lon])
+                    .bindPopup(obtenerContenidoPopup(centro))
+                    .addTo(map);
+                markers.push(marker);
+            });
+        }
+
+        function generarEstrellas(calificacion) {
+         return "★".repeat(calificacion) + "☆".repeat(5 - calificacion);
+            }
+
+        function obtenerContenidoPopup(centro) {
+            const estrellas = generarEstrellas(centro.calificacion);
+            return `<strong>${centro.nombre}</strong><br>Calificación: ${estrellas}`;
+            }   
+
+        function removerCentros() {
+            markers.forEach(marker => map.removeLayer(marker));
+            markers = [];
+        }
+
+        function mostrarMapa() {
+            document.getElementById("inicio").style.display = "none";
+            document.getElementById("encuestas-content").style.display = "none";
+            document.getElementById("reporte-content").style.display = "none";
+            document.querySelector(".buscador").style.display = "block";
+            document.getElementById("map").style.display = "block";
+
+            inicializarMapa(); 
+        }
+
+        function mostrarInicio() {
+            document.getElementById("inicio").style.display = "block";
+            document.getElementById("encuestas-content").style.display = "none";
+            document.getElementById("reporte-content").style.display = "none";
+            document.querySelector(".buscador").style.display = "none";
+            document.getElementById("map").style.display = "none";
+            removerCentros();
+        }
+
+        function mostrarEncuestas() {
+            document.getElementById("inicio").style.display = "none";
+            document.getElementById("encuestas-content").style.display = "block";
+            document.getElementById("reporte-content").style.display = "none";
+            document.querySelector(".buscador").style.display = "none";
+            document.getElementById("map").style.display = "none";
+            removerCentros();
+        }
+        function mostrarResultadosDeEncuestas() {
+    document.getElementById("resultados-content").style.display = "block"; // Muestra los resultados
+    document.getElementById("no-respondidas-content").style.display = "none"; // Oculta el listado de no respondidas
+}
+
+function mostrarEncuestasNoRespondidas() {
+    document.getElementById("resultados-content").style.display = "none"; // Oculta los resultados
+    document.getElementById("no-respondidas-content").style.display = "block"; // Muestra el listado de no respondidas
+}
+
+        function mostrarReporte() {
+            document.getElementById("inicio").style.display = "none";
+            document.getElementById("encuestas-content").style.display = "none";
+            document.getElementById("reporte-content").style.display = "block";
+            document.querySelector(".buscador").style.display = "none";
+            document.getElementById("map").style.display = "none";
+            removerCentros();
+        }
+
+        function buscarCentro() {
+            const busqueda = document.getElementById("busqueda").value.toLowerCase();
+            const centroEncontrado = centrosSalud.find(centro => centro.nombre.toLowerCase().includes(busqueda));
+            
+            if (centroEncontrado) {
+                map.setView([centroEncontrado.lat, centroEncontrado.lon], 14);
+                L.popup()
+                    .setLatLng([centroEncontrado.lat, centroEncontrado.lon])
+                    .setContent(obtenerContenidoPopup(centroEncontrado))
+                    .openOn(map);
+            } else {
+                alert("Centro de salud no encontrado");
+            }
+        }
+
+        document.getElementById("busqueda").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                buscarCentro();
+            }
+        });
+    </script>
+
+
+</body>
+</html>

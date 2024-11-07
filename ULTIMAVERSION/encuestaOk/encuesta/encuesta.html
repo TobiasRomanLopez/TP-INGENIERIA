@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <div class="inicioEncuesta" id="inicioEncuesta">
+        <form action="#">
+            <br>
+            <label for="especialidades" class="txtPreg">Seleccione el tipo de especialidad por el cual acudió al centro</label>
+            <br><br>
+            <select name="Especialidades" id="especialidades">
+                <option value="novalido">Seleccione una opcion</option>
+                <option value="clinico">Clínico</option>
+                <option value="cardiologia">Cardiología</option>
+                <option value="oftalmologia">Oftalmología</option>
+                <option value="endocrinologia">Endocrinología</option>
+                <option value="ginecologia">Ginecología</option>
+                <option value="pedagogia">Pedagogía</option>
+                <option value="pedagogia">Guardia</option>
+            </select>
+            <br><br>
+            <input type="button" value="Confirmar" class="botonConfirmar" onclick="ocultarDiv()">
+            <br><br>
+        </form>
+    </div>
+
+    <div class="preguntas">
+        <div id="pregunta1" class="pregunta">
+            <h3>Pregunta 1/10: Por favor, indique cómo calificaría la atención brindada por el personal que la atendió de 1 a 5 estrellas</h3>
+            <button id="estrella1" onclick="seleccionarEstrella(1)"></button>
+            <button id="estrella2" onclick="seleccionarEstrella(2)"></button>
+            <button id="estrella3" onclick="seleccionarEstrella(3)"></button>
+            <button id="estrella4" onclick="seleccionarEstrella(4)"></button>
+            <button id="estrella5" onclick="seleccionarEstrella(5)"></button>
+            <br><br>
+            <button class="botonConfirmar">Siguiente Pregunta</button>
+            <br><br>
+        </div>
+    </div>
+
+    <div id="pregunta2" class="pregunta">
+        <p class="txtPreg">Pregunta 2/10: Por favor, puntee del 1 al 10 como calificaría la higiene general de la sala de consulta.</p>
+        <br>
+        <label for="calificacionSala" class="txtPreg">Calificación</label>
+
+        <form action="#">
+            <select name="calificacionSala" id="calificacionSala">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br><br>
+            <button class="botonConfirmar">Siguiente Pregunta</button>
+            <br><br>
+        </form>
+    </div>
+        
+    <div id="pregunta3" class="pregunta">
+        <p class="txtPreg">Pregunta 3/10: ¿Como considera el trato y la gestión del personal de recepción? </p>
+        <form action="#">
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">Amigable </label><br>
+    
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2">Colaborativo/a  </label><br>
+    
+            <input type="checkbox" id="checkbox3">
+            <label for="checkbox3">Grosero/a </label><br>
+    
+            <input type="checkbox" id="checkbox4">
+            <label for="checkbox4">Insensible </label><br>
+
+            <input type="checkbox" id="checkbox5">
+            <label for="checkbox5"> Respetuoso/a </label><br>
+
+            <input type="checkbox" id="checkbox6">
+            <label for="checkbox6">Tolerante </label><br>
+        </form>
+
+
+        <br>
+        <button class="botonConfirmar">Siguiente Pregunta</button>
+
+        <br><br>
+    </div>
+    
+    <div id="pregunta4" class="pregunta">
+        <p class="txtPreg">Pregunta 4/10: En base a sus visitas a nuestros centros, ¿considera que se respetan adecuadamente las coberturas incluidas en su obra social o prepaga durante las atenciones recibidas? </p>
+
+        <div id="botonesSiNoEtc">
+            <button id="botonSi" onclick="seleccionarSN_Otro('si')"> SI </button>
+            <button id="botonNo" onclick="seleccionarSN_Otro('no')"> NO </button>
+            <button id="botonOtro" onclick="seleccionarSN_Otro('otro')"> No fui atentido/a por OS o Prepaga </button>
+
+        </div>
+        <br>
+        <button class="botonConfirmar">Siguiente Pregunta</button>
+
+        <br><br>
+    </div>
+
+
+    <div id="pregunta5" class="pregunta">
+        <p class="txtPreg">Pregunta 5/10: En la escala del 1 al 10, ¿Como calificaría la gestión de asignación de turnos? Teniendo en cuenta rapidez y disponibilidad </p>
+
+        <div id="botones1al10">
+            <button id="boton1" onclick="seleccionarDel1al10(1)"> 1 </button>
+            <button id="boton2" onclick="seleccionarDel1al10(2)"> 2 </button>
+            <button id="boton3" onclick="seleccionarDel1al10(3)"> 3 </button>
+            <button id="boton4" onclick="seleccionarDel1al10(4)"> 4 </button>
+            <button id="boton5" onclick="seleccionarDel1al10(5)"> 5 </button>
+            <button id="boton6" onclick="seleccionarDel1al10(6)"> 6 </button>
+            <button id="boton7" onclick="seleccionarDel1al10(7)"> 7 </button>
+            <button id="boton8" onclick="seleccionarDel1al10(8)"> 8 </button>
+            <button id="boton9" onclick="seleccionarDel1al10(9)"> 9 </button>
+            <button id="boton10" onclick="seleccionarDel1al10(10)"> 10 </button>
+
+        </div>
+        
+        
+        <br>
+        <button class="botonConfirmar">Siguiente Pregunta</button>
+        <br><br>
+    </div>
+    </div>
+
+    <div id="pregunta6" class="pregunta">
+        <br>
+        <p class="txtPreg">Pregunta 6/10: ¿Cuánto tiempo esperó antes de ser atendido por el personal médico?</p>
+        <br>
+        <form action="#">
+            <input type="radio" id="radio1" name="espera">
+            <label for="radio1">Menos de 15 minutos</label><br>
+    
+            <input type="radio" id="radio2" name="espera">
+            <label for="radio2">Entre 15 y 30 minutos</label><br>
+    
+            <input type="radio" id="radio3" name="espera">
+            <label for="radio3">Entre 30 y 60 minutos</label><br>
+    
+            <input type="radio" id="radio4" name="espera">
+            <label for="radio4">Más de una hora</label><br>
+        </form>
+        <br>
+        <button class="botonConfirmar">Siguiente Pregunta</button>
+        <br><br>
+    </div>
+    
+    <div id="pregunta7" class="pregunta">
+        <p class="txtPreg">Pregunta 7/10: ¿Con cuales de las siguientes características describiría al personal médico que lo/a atendió? </p>
+
+        <form action="#">
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">Amigable </label><br>
+    
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2">Empático/a </label><br>
+    
+            <input type="checkbox" id="checkbox3">
+            <label for="checkbox3">Apático/a  </label><br>
+    
+            <input type="checkbox" id="checkbox4">
+            <label for="checkbox4">Grosero/a </label><br>
+
+            <input type="checkbox" id="checkbox5">
+            <label for="checkbox5"> Respetuoso/a </label><br>
+
+            <input type="checkbox" id="checkbox6">
+            <label for="checkbox6">Hostil </label><br>
+
+            <input type="checkbox" id="checkbox7">
+            <label for="checkbox7">Colaborativo/a </label><br>
+
+            <input type="checkbox" id="checkbox8">
+            <label for="checkbox8">Tolerante </label><br>
+
+            <input type="checkbox" id="checkbox9">
+            <label for="checkbox9">Detallista </label><br>
+
+            <input type="checkbox" id="checkbox10">
+            <label for="checkbox10">Insensible </label><br>
+        </form>
+        <br>
+        <button class="botonConfirmar">Siguiente Pregunta</button>
+
+        <br><br>
+    </div>
+
+    <div id="pregunta8" class="pregunta">
+        <p class="txtPreg">Pregunta 8/10: En caso que haya acudido a nuestros centros por guardia, por favor califique la asistencia obtenida por medio de las siguientes barras de satisfacción</p>
+        
+        <div class="satisfaccion-container">
+            <label for="satisfaccion1" class="satisfaccion-label">Amabilidad del personal:</label>
+            <input type="range" id="satisfaccion1" class="barra-satisfaccion" min="1" max="10" step="1" value="5" oninput="mostrarValor(this.value, 'valorSeleccionado1')">
+            <div class="valor-satisfaccion" id="valorSeleccionado1"></div>
+        </div>
+        
+        <div class="satisfaccion-container">
+            <label for="satisfaccion2" class="satisfaccion-label">Tiempo de espera:</label>
+            <input type="range" id="satisfaccion2" class="barra-satisfaccion" min="1" max="10" step="1" value="5" oninput="mostrarValor(this.value, 'valorSeleccionado2')">
+            <div class="valor-satisfaccion" id="valorSeleccionado2"></div>
+        </div>
+        
+        <div class="satisfaccion-container">
+            <label for="satisfaccion3" class="satisfaccion-label">Calidad de atención médica:</label>
+            <input type="range" id="satisfaccion3" class="barra-satisfaccion" min="1" max="10" step="1" value="5" oninput="mostrarValor(this.value, 'valorSeleccionado3')">
+            <div class="valor-satisfaccion" id="valorSeleccionado3"></div>
+        </div>
+    
+        <br>
+        <button class="botonConfirmar">Siguiente Pregunta</button>
+        <br><br>
+    </div>
+
+    <div id="pregunta9" class="pregunta">
+        <p class="txtPreg">Pregunta 9/10: Según lo respondido hasta ahora ¿Cuál de los siguientes aspectos de nuestros centros de salud mejoraría?</p>
+        <br>
+        <label for="calificacionAspectos" class="txtPreg"></label>
+    
+        <select name="calificacionAspectos" id="calificacionAspectos">
+            <option value="0">Seleccione una opción</option>
+            <option value="1">1- Mejorar los insumos disponibles.</option>
+            <option value="2">2- Mejorar las amenidades (agua, café, revistas...)</option>
+            <option value="3">3- Mejorar el trato del personal de recepción</option>
+            <option value="4">4- Mejorar el servicio de asignación de turnos</option>
+            <option value="5">5- Mejorar la higiene del establecimiento</option>
+            <option value="6">6- Mejorar la atención online y telefónica</option>
+            <option value="7">7- Mejorar las tecnologías de infraestructura ofrecidas al paciente</option>
+            <option value="8">8- Mejorar/agregar canales de contacto</option>
+            <option value="9">9- Mejorar acceso a nuestra web</option>
+            <option value="10">10- Mejorar posturas en cuanto a quejas y sugerencias</option>
+        </select>
+        <br><br>
+            <button class="botonConfirmar">Siguiente Pregunta</button>
+
+        <br><br>
+    </div>
+
+
+
+
+    <div id="pregunta10" class="pregunta">
+        <br>
+        <p class="txtPreg">Pregunta 10/10: Le agradecemos por haber llegado hasta la última parte de nuestra encuesta, para finalizar y como nos importa su opinión, queremos saber sus opiniones respecto a nuestros centros de salud desde cualquier perspectiva. </p>
+        <br><br>
+        <form action="#">
+            <textarea name="comentario" id="campo_comentario" cols="70" rows="10"></textarea>
+
+        </form>
+        <br>
+            <button class="botonConfirmar">Siguiente Pregunta</button>
+
+
+        </textarea>
+        
+
+        <br><br>
+    </div>
+
+
+    <div id="pregunta11" class="pregunta">
+        <br>
+        <p class="txtFinal"> Muchas gracias por su tiempo, tendremos en cuenta los datos proporcionados en la presente encuesta. </p>
+        <br><br>
+    </div>
+    </div>
+
+
+</body>
+</html>

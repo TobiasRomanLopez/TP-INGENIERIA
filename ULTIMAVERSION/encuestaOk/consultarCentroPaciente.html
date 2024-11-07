@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de atención</title>
+    
+    <link rel="stylesheet" href="/ULTIMAVERSION/encuestaOk/Pantallas principales/stylePersonalDeSalud.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="images/Logo_centrosDeSalud.png" alt="Logo centro de salud" id="logo">
+    </header>
+    <nav class="barra_navegacion">
+        <ul class="menu">
+            <li><a href="#inicio">ACERCA DE NOSOTROS</a></li>
+            <li><a href="#servicios">CENTROS MEDICOS</a></li>
+            <li><a href="#acerca">SERVICIOS</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Centro de salud donde se atendió:</h2>
+        <div id="map" style="height: 400px;"></div>
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <img src="Images/estrellas.png" alt="estrellas" class="estrellas-btnEncuesta">
+        <button class="btn-responder" onclick="responderEncuesta()"><a href="paginaPrincipal.html">Responder Encuesta</a></button>  
+    </div>
+    <script>
+        let map = L.map('map').setView([-34.6037, -58.3816], 12); // Centra el mapa en Buenos Aires
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        
+        // Coordenadas de la direccion random para probar
+        const direccionPredefinida = {
+            lat: -34.6100, 
+            lon: -58.3700  
+        };
+
+        function marcarDireccion(lat, lng) {
+            L.marker([lat, lng]).addTo(map)
+                .bindPopup(`Centro de Salud "X"`)
+                .openPopup();
+        }
+
+        // Marcar la direccion predefinida al cargar la pagina
+        window.onload = function() {
+            map.setView([direccionPredefinida.lat, direccionPredefinida.lon], 14); 
+            marcarDireccion(direccionPredefinida.lat, direccionPredefinida.lon); 
+        }
+        
+    </script>
+</body>
+</html>

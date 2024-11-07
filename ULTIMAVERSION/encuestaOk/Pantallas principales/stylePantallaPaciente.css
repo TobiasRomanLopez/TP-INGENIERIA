@@ -1,0 +1,188 @@
+
+* {
+    padding: 0;
+    margin: 0 ;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.contenedorDeOpciones {
+    background-color: rgb(255, 255, 255);
+    height: 50vh;
+    margin:15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.consultarCentro{
+    height: 350px;
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url('CentrosDeSalud.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+}
+
+button {
+    padding: .6rem 1rem;
+  border: 1px solid #e7e2dd;
+  border-radius: 4px;
+  background-color: #f0eae5;
+  color: #fff;
+
+  font-size: 1.5rem;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+  box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,
+    0 1px 3px rgba(0,0,0,.2);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
+  background-image: linear-gradient(#3ba0d6 10%, #2399d2 100%);
+    transition: .3s linear;
+    cursor: pointer;
+
+}
+
+.button a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgb(191, 198, 211);
+    box-shadow: 0 0 5px rgb(191, 198, 211), 0 0 25px rgb(191, 198, 211), 0 0 50px rgb(191, 198, 211), 0 0 75px rgb(191, 198, 211);
+}
+
+.contenedorServicios {
+    
+    height: 350px;
+    width: 450px;
+    margin-right: 400px;
+    background-image: url('Servicios.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border: 2px solid black;
+}
+
+
+
+
+.barra_navegacion 
+{
+    background-color: rgba(223, 223, 223, 0.5); /* Color gris claro con opacidad (casi transparente) */
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    top:210px;
+}
+
+body{
+    font-family: arial;
+    background-position: 10%;
+    background-size: cover;
+}
+
+#logo 
+{
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    width: 200px;
+    height: auto;
+}
+
+.barra_busqueda 
+{
+    max-width: 800px;
+    margin: 0 auto;
+    position: absolute;
+    top: 100px;
+    right: 90px;    
+}
+.campo_busqueda 
+{
+    width: 450px;
+    padding: 8px 12px 8px 32px; /* Espacio a la izquierda para el ícono */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-image: url('/encuestaOk/Pantallas\ principales/Images/'); /* URL de la imagen de lupa */
+    background-size: 18px; /* Tamaño de la lupa */
+    background-position: 10px center; /* Posición de la lupa dentro del campo */
+    background-repeat: no-repeat;
+    background-color: white; /* Color de fondo del campo */
+}
+.menu
+{
+    left: 13%;
+    top: 16px;
+    position: absolute;
+    list-style-type: none; /* Quita los puntos de la lista */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el padding */
+    display: flex; /* Organiza los elementos en fila */
+    justify-content: space-around; /* Espacia los elementos uniformemente */
+}
+
+.menu li 
+{
+    margin: 0 80px; /* Espaciado horizontal entre los elementos del menú */
+}
+
+.menu a 
+{
+    font-family: 'Montserrat';
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: black; /* Color del texto de los enlaces */
+    padding: 8px 18px; /* Espaciado interno para los enlaces */
+    transition: background-color 0.3s; /* Añade una transición suave */
+}
+
+.menu a:hover 
+{
+    background-color: rgba(255, 255, 255, 0.2); /* Cambia el fondo al pasar el mouse */
+    border-radius: 4px; /* Bordes redondeados en el hover */
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed; /* Fija el footer */
+    bottom: 0; /* Lo coloca en la parte inferior */
+    left: 0; /* Alinea al lado izquierdo */
+    right: 0; /* Alinea al lado derecho */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links, .footer-social {
+    margin: 10px 0;
+}
+
+.footer-links a, .footer-social a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
